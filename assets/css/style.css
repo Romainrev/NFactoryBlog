@@ -1,0 +1,62 @@
+ul {
+    margin : 0px;
+    padding : 0px;
+}
+
+ul li{
+    display : inline-block;
+    margin-left : 30px;
+}
+
+ul li a {
+    text-decoration : none;
+}
+
+#main {
+    width : 600px;
+    margin : auto;
+}
+
+body {
+    background-color: rgb(209, 207, 207);
+}
+
+footer {
+    background-color : rgb(178, 178, 201);
+    text-align: center;
+}
+
+.nom {
+    height: 30px;
+    margin-left : 47px;
+}
+
+.prenom {
+    height : 30px;
+    margin-left : 30px;
+}
+
+.email {
+    height : 30px;
+    margin-left: 44px;
+}
+
+.pass {
+    height : 32px;
+    
+    
+}
+
+.bouton {
+    text-align: center;
+}
+
+input {
+    border-radius: 5px;
+    
+}
+
+div#main {
+    text-align: center;
+    
+}
