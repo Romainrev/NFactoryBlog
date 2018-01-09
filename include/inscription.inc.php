@@ -27,7 +27,9 @@ if(isset($_POST["formulaire"])) {
 
         include("./include/formInscription.php");
     } else {
-        $connexion=mysqli_connect("localhost","root","","blogs");
+        $connexion=mysqli_connect("localhost","root","","nfactoryblog");
+        $requete = "INSERT INTO `t-users`(`ID_user`, `USERNAME`, `USERFNAME`,`USERMAIL`,`USERPASSWORD`,) VALUES (NULL, $nom, $prenom, $email, $mdp)";
+
     }
   
 
