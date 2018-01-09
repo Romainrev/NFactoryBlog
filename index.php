@@ -1,3 +1,9 @@
+<?php
+
+include_once ("./function/callPage.php");
+
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -11,36 +17,16 @@
     <?php
 include_once("./include/header.php");?>
 <main>
+
 <?php
-if (isset($_GET['page']) && $_GET['page'] != "") {
-    $page = $_GET['page'];    
-}
 
-else {
-    $page = "default";
-}
-
-$page = "./include/" . $page . ".inc.php";
-$incFiles = glob("./include/*.inc.php");
-
-if (in_array($page, $incFiles)) {
-    include($page);
-}
-
-else {
-    include("./include/default.inc.php");
-}
-
+callPage();
 
 
 ?>
+
 </main>
-
-<?php include_once("./include/footer.php");?>
-  
     </div>
-
-
 
 </body>
 </html>

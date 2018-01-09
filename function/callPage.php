@@ -18,5 +18,5 @@ function callPage() {
     else {
         include("./include/default.inc.php");
     }
-    include_once("./include/footer.php")
+    include_once("./include/footer.php");
 }
