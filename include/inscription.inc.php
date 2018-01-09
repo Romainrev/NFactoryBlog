@@ -2,6 +2,10 @@
 <?php
 if(isset($_POST["formulaire"])) {
     $tabErreur = array();
+    $nom = $_POST("Nom");
+    $prenom = $_POST("Prenom");
+    $email = $_POST("Email");
+    $mdp = $_POST("Mot de passe ");
 
     if($_POST["nom"] == "")
         array_push($tabErreur, "Veuillez saisir votre nom");
