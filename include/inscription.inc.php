@@ -2,10 +2,10 @@
 <?php
 if(isset($_POST["formulaire"])) {
     $tabErreur = array();
-    $nom = $_POST("nom");
-    $prenom = $_POST("Prenom");
-    $email = $_POST("email");
-    $mdp = $_POST("pass");
+    $nom = $_POST["nom"];
+    $prenom = $_POST["Prenom"];
+    $email = $_POST["email"];
+    $mdp = $_POST["pass"];
 
     if($_POST["nom"] == "")
         array_push($tabErreur, "Veuillez saisir votre nom");
@@ -31,8 +31,8 @@ if(isset($_POST["formulaire"])) {
 
         include("./include/formInscription.php");
     } else {
-        $connexion=mysqli_connect("localhost","root","","nfactoryblog");
-        $requete = "INSERT INTO `t-users`(`ID_user`, `USERNAME`, `USERFNAME`,`USERMAIL`,`USERPASSWORD`,) VALUES (NULL, $nom, $prenom, $email, $mdp NULL, 5)";
+        $connexion = mysqli_connect("localhost","root","","NFactoryBlog");
+        $requete = "INSERT INTO t_users (ID_user, USERNAME, USERFNAME,USERMAIL,USERPASSWORD,USERDATEINS,T_ROLES_ID_ROLE) VALUES (NULL, '$nom', '$prenom', '$email', '$mdp', NULL, 5)";
 
         mysqli_query($connexion , $requete);
         mysqli_close($connexion);
