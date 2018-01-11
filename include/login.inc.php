@@ -5,7 +5,7 @@
     <label for = "pass" name = "pass">Mot de Passe : </label><input type = "password" name = "pass" >
 </div>
 <div class ="bouton">
-    <input type = "submit" value = "Valider" name ="formulaire">
+    <input type = "submit" value = "Valider" name ="formulaire2">
 
 
 
