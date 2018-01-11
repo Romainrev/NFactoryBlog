@@ -1,3 +1,5 @@
+<form method ="post" action ="#">
+
 <div class ="email">
     <label for = "email" name = "email">Email : </label><input type = "email" name = "email">
 </div>
@@ -8,7 +10,8 @@
     <input type = "submit" value = "Valider" name ="formulaire2">
 
 
-
+</div>
+</form>
 
 
 <?php
