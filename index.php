@@ -13,20 +13,20 @@ include_once ("./function/callPage.php");
 </head>
 
 <body>
-    <div id="main">
+<div id="main">
     <?php
-include_once("./include/header.php");?>
-<main>
+    include_once("./include/header.php");?>
+    <main>
 
-<?php
+        <?php
 
-callPage();
+        callPage();
 
 
-?>
+        ?>
 
-</main>
-    </div>
+    </main>
+</div>
 
 </body>
 </html>
