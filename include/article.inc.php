@@ -1,6 +1,6 @@
 <?php
 
-echo("<h1>Login</h1>");
+
 
 if(isset($_POST['formulaire3'])) {
     $tabErreur = array();
