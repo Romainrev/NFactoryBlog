@@ -36,6 +36,10 @@ if(isset($_POST['formulaire3'])) {
     } else {
 
         $connexion = mysqli_connect("localhost", "root", "", "NFactoryBlog");
+        $requete2 = "INSERT INTO t_articles (ID_ARTICLE, ARTTITRE, ARTCHAPO,ARTCONTENU,ARTDATE) VALUES (NULL, '$titre', '$chapo', '$contenu', '$date')";
+        mysqli_query($connexion, $requete2);
+        mysqli_close($connexion);
+
     }
 }else{
     include("./include/formarticle.php");
