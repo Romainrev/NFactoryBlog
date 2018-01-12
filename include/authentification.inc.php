@@ -31,20 +31,24 @@ include("./include/login.php");
     $requete = "SELECT * FROM t_users WHERE USERMAIL='$email' AND USERPASSWORD='$mdp'";
 
 
-mysqli_query($connexion,$requete);
 
-    if($result=mysqli_query($connexion,$requete)){
 
-    $row_cnt= mysqli_num_rows($result);
+    if($result=mysqli_query($connexion,$requete)) {
+        if (mysqli_num_rows($result) > 0) {
+            $_SESSION['login'] = 1;
+            echo "<a href=\"index.php?page=accueil\">Vous êtes bien identifié </a>";
+        }
 
-    echo($row_cnt);
+         else {
+             $_SESSION['login'] = 0;
+         }
+    }
 
-    mysqli_free_result($result);
 }
+
     mysqli_close($connexion);
-    session_start();
-    $_SESSION['email']=$email;
-}
+
+
 
     } else {
 
