@@ -49,6 +49,6 @@ if(isset($_POST["formulaire"])) {
 }
 
 else {
-    echo("Je viens d'ailleurs");
+
     include("./include/formInscription.php");
 }
