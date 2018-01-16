@@ -35,9 +35,11 @@ if(isset($_POST['formulaire3'])) {
 
         $connexion = mysqli_connect("localhost", "root", "", "NFactoryBlog");
         $contenu= addslashes(htmlentities($contenu));
-        $chapo=addslashes(utf8_decode($chapo));
-        $titre=addslashes(utf8_decode($titre));
+        $chapo=addslashes(utf8_decode(htmlentities($chapo)));
+        $titre=addslashes(utf8_decode(htmlentities($titre)));
         $requete2 = "INSERT INTO `t_articles` (ID_ARTICLE, ARTTITRE, ARTCHAPO,ARTCONTENU,ARTDATE) VALUES (NULL, '$titre', '$chapo', '$contenu', NOW())";
+
+
 
         if(mysqli_query($connexion, $requete2))
             echo "OK";
