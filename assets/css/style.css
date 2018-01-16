@@ -15,10 +15,12 @@ ul li a {
 #main {
     width : 600px;
     margin : auto;
+    background-color : #9ab7bf;
 }
 
 body {
-    background-color: rgb(209, 207, 207);
+    background-image : url("../img/fond.jpg");
+    background-size: cover ;
 }
 
 footer {
@@ -27,6 +29,7 @@ footer {
 }
 
 .nom {
+
     height: 30px;
     margin-left : 47px;
 }
