@@ -1,5 +1,6 @@
 <h1>Inscription</h1>
 <?php
+
 if(isset($_POST["formulaire"])) {
     $tabErreur = array();
     $nom = $_POST["nom"];

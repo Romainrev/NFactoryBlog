@@ -1,9 +1,24 @@
 <?php
 session_start();
+
+if (isset($_COOKIE['visite'])) {
+    setCookie('visite', $_COOKIE['visite'] + 1);
+} else {
+    setCookie('visite', 1);
+}
+echo "Ceci est votre";
+echo" ";
+echo ($_COOKIE['visite']);
+echo(" ");
+echo ("visite");
+echo(" ");
 include_once ("./function/callPage.php");
-
-
 ?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
