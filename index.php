@@ -25,6 +25,7 @@ include_once ("./function/callPage.php");
     <meta charset="UTF-8">
     <title>Blog</title>
     <link rel ="stylesheet" href ="./assets/css/style.css">
+    <script src ="./assets/js/function.js"></script>
     <script type="text/javascript" src="./assets/js/tinymce/tinymce.min.js"></script>
     <script type="text/javascript">
         tinymce.init({

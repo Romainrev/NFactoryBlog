@@ -32,6 +32,16 @@ if(isset($_POST['formulaire2'])){
             if(mysqli_num_rows($result) >0 ){
                 $_SESSION['login']=1;
 
+                while($donnees=mysqli_fetch_array($result)) {
+                    if ($donnees['T_ROLES_ID_ROLE'] == 1) {
+                        echo("<script>redirection(\"index.php?page=admin\")</script>");
+                        $_SESSION['admin']=1;
+                    }else {
+                        echo("<script>redirection(\"index.php?page=accueil\")</script>");
+                        //$_SESSION['admin']=0;
+
+                    }
+                }
 
                 echo "<a href=\"index.php?page=accueil\">Vous êtes bien identifié</a>";
 

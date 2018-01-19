@@ -13,6 +13,12 @@
         ?>
         <li><a href ="index.php?page=article">Article</a></li>
 
+        <?php
+        if(isset($_SESSION['admin'])) {
+            echo("<li><a href =\"index.php?page=admin\">Administration</a></li>");
+        }
+        ?>
+
 
     </ul>
 

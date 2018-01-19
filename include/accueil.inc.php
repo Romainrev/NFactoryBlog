@@ -7,9 +7,12 @@ while ($donnees= mysqli_fetch_array($reponse)) {
     echo(html_entity_decode($donnees['ARTTITRE']));
     echo("</h2>");
     echo(html_entity_decode($donnees['ARTCONTENU']));
+    echo "Publié le: " . date ("F d Y H:i");
+    echo('<p>');
+    echo "Modifié le: " . date ("F d Y H:i", getlastmod());
+
     echo("<hr>");
-    setlocale(LC_TIME, 'fra_fra');
-    echo strftime('%A %d %B %Y, %H:%M');
+
 
 
 
