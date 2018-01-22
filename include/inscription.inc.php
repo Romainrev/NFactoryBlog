@@ -32,13 +32,16 @@ if(isset($_POST["formulaire"])) {
 
         include("./include/formInscription.php");
     } else {
-        $connexion = mysqli_connect("localhost","root","","NFactoryBlog");
+        $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
+        $username = "root";
+        $password ="";
+        $db = new PDO($dsn, $username, $password);
+
+
         $mdp=sha1($_POST['password']);
         $requete = "INSERT INTO t_users (ID_user, USERNAME, USERFNAME,USERMAIL,USERPASSWORD,USERDATEINS,T_ROLES_ID_ROLE) VALUES (NULL, '$nom', '$prenom', '$email', '$mdp', NULL, 2)";
-
-
-        mysqli_query($connexion , $requete);
-        mysqli_close($connexion);
+        $db -> query($requete);
+        unset($db);
 
     }
 

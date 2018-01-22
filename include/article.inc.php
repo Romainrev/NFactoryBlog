@@ -33,18 +33,22 @@ if(isset($_SESSION['login'])) {
 
         } else {
 
-            $connexion = mysqli_connect("localhost", "root", "", "NFactoryBlog");
+            $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
+            $username = "root";
+            $password ="";
+            $db = new PDO($dsn, $username, $password);
+
             $contenu = addslashes(htmlentities($contenu));
             $chapo = addslashes(utf8_decode(htmlentities($chapo)));
             $titre = addslashes(utf8_decode(htmlentities($titre)));
             $requete2 = "INSERT INTO `t_articles` (ID_ARTICLE, ARTTITRE, ARTCHAPO,ARTCONTENU,ARTDATE) VALUES (NULL, '$titre', '$chapo', '$contenu', NOW())";
 
 
-            if (mysqli_query($connexion, $requete2))
+            if ($db->query ($requete2))
                 echo "OK";
             else
                 echo "Fuck";
-            mysqli_close($connexion);
+            unset($db);
 
 
         }

@@ -1,11 +1,16 @@
 <?php
 if(isset($_SESSION['admin'])){
 if($_SESSION['admin']==1) {
-    $connexion = mysqli_connect("localhost", "root", "", "NFactoryBlog");
+
+    $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
+    $username = "root";
+    $password ="";
+    $db = new PDO($dsn, $username, $password);
+
     $requete = "SELECT * FROM t_users";
-    $result = mysqli_query($connexion, $requete);
+    $result = $db->query($requete);
     echo("<table>");
-    while ($donnees = mysqli_fetch_array($result)) {
+    while ($donnees = $result->fetch()) {
 
         echo("<tr><td>" . $donnees['USERNAME'] . "</td>" . "<td>" . $donnees['USERFNAME'] . "</td>" . "<td>" . $donnees['USERMAIL']
             . "</td>" . "<td>" . $donnees['T_ROLES_ID_ROLE'] . "</td>" . "<td>" . "<form method='post' action='#'>" . "<select name='select'><option value='1'>1</option>
@@ -17,10 +22,10 @@ if($_SESSION['admin']==1) {
         $id = $_POST['id'];
         $choix = $_POST['select'];
         $requete2 = "UPDATE t_users SET T_ROLES_ID_ROLE='$choix' WHERE ID_USER='$id'";
-        mysqli_query($connexion, $requete2);
+        $db->query($requete2);
     }
 }
-
+ unset($db);
 } else {
     echo "erreur";
 }
