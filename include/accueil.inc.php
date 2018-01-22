@@ -4,11 +4,9 @@ $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
 $username = "root";
 $password ="";
 $db = new PDO($dsn, $username, $password);
-$requete = "SELECT * FROM t_articles ORDER BY ARTDATE DESC LIMIT 1, 5;";
+$requete = "SELECT * FROM t_articles LEFT JOIN t_categories_has_t_articles ON t_articles.ID _ARTICLE=t_categories_has_t_articles.T_CATEGORIES_ID_CATEGORIE
+ ORDER BY ARTDATE DESC LIMIT 1, 5,";
 $result = $db->query($requete);
-
-
-
 
 while ($donnees = $result->fetch()) {
 
@@ -27,4 +25,7 @@ while ($donnees = $result->fetch()) {
 
 }
 unset($db);
+
 ?>
+
+
