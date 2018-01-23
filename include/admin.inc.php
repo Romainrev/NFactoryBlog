@@ -2,10 +2,7 @@
 if(isset($_SESSION['admin'])){
 if($_SESSION['admin']==1) {
 
-    $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
-    $username = "root";
-    $password ="";
-    $db = new PDO($dsn, $username, $password);
+    $db=connectionPDO();
 
     $requete = "SELECT * FROM t_users";
     $result = $db->query($requete);

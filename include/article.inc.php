@@ -33,10 +33,7 @@ if(isset($_SESSION['login'])) {
 
         } else {
 
-            $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
-            $username = "root";
-            $password ="";
-            $db = new PDO($dsn, $username, $password);
+            $db=connectionPDO();
 
             $contenu = addslashes(htmlentities($contenu));
             $chapo = addslashes(utf8_decode(htmlentities($chapo)));

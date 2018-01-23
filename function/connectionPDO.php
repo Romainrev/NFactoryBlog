@@ -1,5 +1,5 @@
 <?php
-function connectionPDO() : object {
+function connectionPDO() {
     $dsn ="mysql:dbname=nfactoryblog;host=localhost;charset=utf8";
     $username = "root";
     $password ="";
@@ -11,6 +11,5 @@ function connectionPDO() : object {
         echo $e->getMessage();
 
     }
-
-
+        return $db;
 }

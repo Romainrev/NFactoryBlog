@@ -1,6 +1,7 @@
 <h1>Inscription</h1>
 <?php
 
+
 if(isset($_POST["formulaire"])) {
     $tabErreur = array();
     $nom =trim($_POST['nom']);
@@ -32,10 +33,7 @@ if(isset($_POST["formulaire"])) {
 
         include("./include/formInscription.php");
     } else {
-        $dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
-        $username = "root";
-        $password ="";
-        $db = new PDO($dsn, $username, $password);
+        $db = connectionPDO();
 
 
         $mdp=sha1($_POST['password']);
