@@ -3,7 +3,9 @@ function callPage() {
     if (isset($_GET['page']) && $_GET['page'] != "") {
         $page = $_GET['page'];
     }
-
+    elseif ($_SERVER['PHP_SELF']==="/Blog2/index.php"){
+        $page="accueil";
+    }
     else {
         $page = "default";
     }
@@ -20,3 +22,4 @@ function callPage() {
     }
     include_once("./include/footer.php");
 }
+

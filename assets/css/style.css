@@ -15,7 +15,7 @@ ul li a {
 #main {
     width : 600px;
     margin : auto;
-    background-color : #9ab7bf;
+    background-color : slategray;
 }
 
 body {
@@ -24,7 +24,7 @@ body {
 }
 
 footer {
-    background-color : rgb(178, 178, 201);
+    background-color : lightgrey;
     text-align: center;
 }
 

@@ -8,8 +8,10 @@ function connectionPDO() {
 
     }
     catch (PDOException $e){
-        echo $e->getMessage();
-
+        //echo $e->getMessage();
+        $fd=fopen("fichier.log", "a+");
+        fwrite($fd, $e ->getMessage());
     }
         return $db;
 }
+
