@@ -1,14 +1,14 @@
 <?php
 echo("<h2>Page d'accueil</h2>");
-$dsn ="mysql:dbname=NFactoryBlog;host=localhost;charset=utf8";
-$username = "root";
-$password ="";
-$db = new PDO($dsn, $username, $password);
-$requete ="SELECT * FROM t_articles LEFT JOIN t_categories_has_t_articles
- ON t_articles.ID_ARTICLE=t_categories_has_t_articles.T_CATEGORIES_ID_CATEGORIE²jujulijuijkyh-ykihjkèujkujyhik:uj";
-die($requete);
-$result = $db->query($requete);
 
+$db = connectionPDO();
+
+
+
+$requete ="SELECT * FROM t_articles LEFT JOIN t_categories_has_t_articles
+ ON t_articles.ID_ARTICLE=t_categories_has_t_articles.T_ARTICLES_ID_ARTICLE LEFT JOIN t_categories ON t_categories_has_t_articles.T_CATEGORIES_ID_CATEGORIE=t_categories.ID_CATEGORIE";
+$result = $db->query($requete);
+echo("<p>");
 while ($donnees = $result->fetch()) {
 
     echo("<h2>");

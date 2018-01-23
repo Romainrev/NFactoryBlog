@@ -1,6 +1,7 @@
 <?php
-session_start();
 
+session_start();
+include_once ("./function/connectionPDO.php");
 if (isset($_COOKIE['visite'])) {
     setCookie('visite', $_COOKIE['visite'] + 1);
 } else {
@@ -38,12 +39,15 @@ include_once ("./function/callPage.php");
 <body>
 <div id="main">
     <?php
+
     include_once("./include/header.php");?>
     <main>
 
         <?php
 
         callPage();
+
+
 
 
         ?>
