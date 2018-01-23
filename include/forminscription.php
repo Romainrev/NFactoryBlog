@@ -18,3 +18,4 @@
 
     </div>
 </form>
+<div class="g-recaptcha" data-sitekey="6LfaFEIUAAAAAC9b2k4PH2j8tkLoPfS7xsz3kdpD"></div>

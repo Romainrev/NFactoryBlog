@@ -3,6 +3,8 @@
 
 
 if(isset($_POST["formulaire"])) {
+
+
     $tabErreur = array();
     $nom =trim($_POST['nom']);
     $prenom=trim($_POST["Prenom"]);

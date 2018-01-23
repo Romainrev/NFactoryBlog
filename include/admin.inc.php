@@ -10,8 +10,8 @@ if($_SESSION['admin']==1) {
     while ($donnees = $result->fetch()) {
 
         echo("<tr><td>" . $donnees['USERNAME'] . "</td>" . "<td>" . $donnees['USERFNAME'] . "</td>" . "<td>" . $donnees['USERMAIL']
-            . "</td>" . "<td>" . $donnees['T_ROLES_ID_ROLE'] . "</td>" . "<td>" . "<form method='post' action='#'>" . "<select name='select'><option value='1'>1</option>
-            <option value='2'>2</option><option value='3'>3</option><option value='4'>4</option><option value='7'>7</option>
+            . "</td>" . "<td>" . $donnees['T_ROLES_ID_ROLE'] . "</td>" . "<td>" . "<form method='post' action='#'>" . "<select name='select'><option value='0'>Role</option><option value='1'>SuperAdmin</option>
+            <option value='2'>Admin</option><option value='3'>Moderateur</option><option value='4'>Redacteur</option><option value='7'>Utilisateur</option>
             </select> " . "</td>" . "<td>" . "<input type='text' name='id'><input type='submit' value='Mettre a jour' name='formulaire'>" . "</form>" . "</td>" . "</tr>");
     }
     echo("</table>");
