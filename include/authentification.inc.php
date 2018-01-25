@@ -22,29 +22,29 @@ if(isset($_POST['formulaire2'])){
         echo($message);
         include("./include/login.php");
     }else {
-        $db = connectionPDO();
-
-
-
+        $db=connectionPDO('localhost' , 'NFactoryBlog' , 'root' , '');
         $mdp=sha1($_POST['password']);
         $requete = "SELECT * FROM t_users WHERE USERMAIL='$email' AND USERPASSWORD='$mdp'";
 
 
 
-
-        if($result=$db->query($requete)){
-            $count = $result ->rowCount();
-            if ($count >0 ){
+        if($result= $db -> query($requete)){
+            $count= $result -> rowCount();
+            if($count >0 ){
                 $_SESSION['login']=1;
+                while($donnees= $result -> fetch()){
 
-                while($donnees=$result->fetch()) {
-                    if ($donnees['T_ROLES_ID_ROLE'] == 1) {
-                        echo("<script>redirection(\"index.php?page=admin\")</script>");
+                    if($donnees['T_ROLES_ID_ROLE']==1 || $donnees['T_ROLES_ID_ROLE']==2){
+                        echo ("<script>redirection(\"index.php?page=admin\")</script>");
                         $_SESSION['admin']=1;
-                    }else {
-                        echo("<script>redirection(\"index.php?page=accueil\")</script>");
+                    }
+                    if($donnees['T_ROLES_ID_ROLE']==4){
+                        echo ("<script>redirection(\"index.php?page=accueil\")</script>");
+                        $_SESSION['admin']=2;
+                    }
+                    else {
+                        echo ("<script>redirection(\"index.php?page=accueil\")</script>");
                         //$_SESSION['admin']=0;
-
                     }
                 }
 
@@ -56,8 +56,10 @@ if(isset($_POST['formulaire2'])){
                 echo("erreur");
 
             }
+
         }
         unset($db);
+
 
     }
 
@@ -66,7 +68,6 @@ if(isset($_POST['formulaire2'])){
     include("./include/login.php");
 }
 
-?>
 
 
 

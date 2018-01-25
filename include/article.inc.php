@@ -1,7 +1,7 @@
 <?php
 
 
-if(isset($_SESSION['login'])) {
+if(isset($_SESSION['admin'])) {
 
     if (isset($_POST['formulaire3'])) {
         $tabErreur = array();
@@ -53,6 +53,6 @@ if(isset($_SESSION['login'])) {
         include("./include/formarticle.php");
     }
 }else {
-    echo('Erreur, veuillez vous connecter');
+    echo("Vous n'avez pas les privilèges requis.");
 }
 
