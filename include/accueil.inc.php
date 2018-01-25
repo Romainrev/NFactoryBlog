@@ -46,7 +46,20 @@ while ($donnees =$result->fetch()) {
     echo "Publié le: " . date ("F d Y H:i");
     echo('<p>');
     echo "Modifié le: " . date ("F d Y H:i", getlastmod());
-    echo($donnees['CATLIBELLE']);
+
+    if($donnees['CATLIBELLE']=='Web') {
+        $id=2;
+        echo("<p><a href ='index.php?page=catArticle&amp;id=$id.'>".$donnees['CATLIBELLE']."</a></p>");
+    }
+
+    else {
+        $id=3;
+        echo("<p><a href ='index.php?page=catArticle&amp;id=$id.'>".$donnees['CATLIBELLE']."</a></p>");
+
+    }
+
+
+
     echo("<hr>");
 
 }
