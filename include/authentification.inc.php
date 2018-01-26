@@ -22,7 +22,7 @@ if(isset($_POST['formulaire2'])){
         echo($message);
         include("./include/login.php");
     }else {
-        $db=connectionPDO('localhost' , 'NFactoryBlog' , 'root' , '');
+        $db=connectionPDO();
         $mdp=sha1($_POST['password']);
         $requete = "SELECT * FROM t_users WHERE USERMAIL='$email' AND USERPASSWORD='$mdp'";
 
@@ -31,7 +31,9 @@ if(isset($_POST['formulaire2'])){
         if($result= $db -> query($requete)){
             $count= $result -> rowCount();
             if($count >0 ){
+
                 $_SESSION['login']=1;
+
                 while($donnees= $result -> fetch()){
 
                     if($donnees['T_ROLES_ID_ROLE']==1 || $donnees['T_ROLES_ID_ROLE']==2){
@@ -46,6 +48,7 @@ if(isset($_POST['formulaire2'])){
                         echo ("<script>redirection(\"index.php?page=accueil\")</script>");
                         //$_SESSION['admin']=0;
                     }
+                    $_SESSION['id']= $donnees['ID_USER'];
                 }
 
                 echo "<a href=\"index.php?page=accueil\">Vous êtes bien identifié</a>";

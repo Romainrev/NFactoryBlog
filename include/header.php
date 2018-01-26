@@ -11,8 +11,10 @@
 
 
         } else {
+            echo("<li><a href=\"index.php?page=monCompte\"><i class=\"fa fa-users\" aria-hidden=\"true\"></i>Mon Compte</a></li>");
             echo("<li><a href=\"index.php?page=logout\"><i class=\"fa fa-sign-out\" aria-hidden=\"true\"></i> Logout</a></li>");
             echo("<li><a href=\"index.php?page=contact\"> <i class=\"fa fa-comments\" aria-hidden=\"true\"></i> Contact</a></li>");
+
 
         }
         ?>
