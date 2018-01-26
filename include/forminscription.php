@@ -1,4 +1,6 @@
-
+<?php
+require('captcha.php');
+?>
 
 <form method = "post" action =" ">
     <div class ="nom">
@@ -13,9 +15,14 @@
     <div class ="pass">
         <label for = "password" name = "password">Mot de Passe : </label><input type = "password" name = "password" >
     </div>
+    <div class ="captcha">
+        <label for="captcha">Recopiez le mot : "<?php echo captcha(); ?>"</label>
+        <input type="text" name="captcha" id="captcha" /><br />
+
+    </div>
     <div class ="bouton">
         <input type = "submit" value = "S'inscrire" name ="formulaire">
 
     </div>
 </form>
-<div class="g-recaptcha" data-sitekey="6LfaFEIUAAAAAC9b2k4PH2j8tkLoPfS7xsz3kdpD"></div>
+

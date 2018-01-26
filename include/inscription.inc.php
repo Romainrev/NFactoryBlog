@@ -37,12 +37,16 @@ if(isset($_POST["formulaire"])) {
     } else {
         $db = connectionPDO();
 
+        if($_POST['captcha'] != $_SESSION['captcha']) {
+            echo("Erreur captcha");
+        }else {
 
-        $mdp=sha1($_POST['password']);
-        $requete = "INSERT INTO t_users (ID_user, USERNAME, USERFNAME,USERMAIL,USERPASSWORD,USERDATEINS,T_ROLES_ID_ROLE) VALUES (NULL, '$nom', '$prenom', '$email', '$mdp', NULL, 2)";
-        $db -> query($requete);
-        unset($db);
 
+            $mdp = sha1($_POST['password']);
+            $requete = "INSERT INTO t_users (ID_user, USERNAME, USERFNAME,USERMAIL,USERPASSWORD,USERDATEINS,T_ROLES_ID_ROLE) VALUES (NULL, '$nom', '$prenom', '$email', '$mdp', NULL, 2)";
+            $db->query($requete);
+            unset($db);
+        }
     }
 
 

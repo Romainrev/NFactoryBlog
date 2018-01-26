@@ -64,7 +64,7 @@ if(isset($_SESSION['login'])) {
                 //$db = connectionPDO();
                 $requete = "UPDATE t_users SET USERNAME='$nom', USERFNAME='$prenom', USERMAIL='$email' WHERE ID_USER='$id'";
                 $result = $db->query($requete);
-                }
+            }
         }
 
 
