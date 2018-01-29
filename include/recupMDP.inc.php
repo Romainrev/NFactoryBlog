@@ -33,7 +33,7 @@ if(isset($_POST['valider'])) {
                 $message .='<html>
                              <body>
                              
-                             <a href="http://localhost/Blog2/index.php?page=modifPass&amp;cle='.$cle.'">Cliquez-ici pour modifier votre mot de passe.</a>
+                             <a href="http://localhost/Blog2/index.php?page=modifPass&amp;cle='.$cle.'&amp;email='.$to.'">Cliquez-ici pour modifier votre mot de passe.</a>
                                     </body>
                                  </html>';
 
