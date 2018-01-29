@@ -1,3 +1,8 @@
+<form method = "POST" action = "index.php?page=recherche">
+    <input type="text" name="recherche"/>
+    <input type="submit" value="Rechercher" />
+</form>
+
 <?php
 echo("<h2>Page d'accueil</h2>");
 
@@ -38,11 +43,11 @@ $result = $db->query($requete);
 echo("<p>");
 while ($donnees =$result->fetch()) {
 
-
-    echo("<h2>");
+    $articleId = $donnees['ID_ARTICLE'];
+    echo("<h2><a href=\"index.php?page=afficheArticle&amp;id=$articleId\">");
     echo(html_entity_decode($donnees['ARTTITRE']));
-    echo("</h2>");
-    echo(html_entity_decode($donnees['ARTCONTENU']));
+    echo("</a></h2>");
+    echo(html_entity_decode($donnees['ARTCHAPO']));
     echo "Publié le: " . date ("F d Y H:i");
     echo('<p>');
     echo "Modifié le: " . date ("F d Y H:i", getlastmod());
