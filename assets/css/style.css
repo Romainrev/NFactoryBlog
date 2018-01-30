@@ -10,16 +10,24 @@ ul li{
 
 ul li a {
     text-decoration : none;
+
+}
+
+
+
+ul li a:visited{
+    text-decoration: none;
+    color: #909188;
 }
 
 #main {
     width : 600px;
     margin : auto;
-    background-color : #87CEEB;
+    background-color : #704261;
 }
 
 body {
-    background-image : url("../img/fond2.jpg");
+    background-image : url("../img/fond3.jpg");
     background-size: cover ;
 }
 
@@ -63,5 +71,6 @@ div#main {
     text-align: center;
     
 }
+ .bouton{
 
-
+ }

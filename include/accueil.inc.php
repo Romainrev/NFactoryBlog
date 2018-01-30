@@ -1,6 +1,6 @@
 <form method = "POST" action = "index.php?page=recherche">
     <input type="text" name="recherche"/>
-    <input type="submit" value="Rechercher" />
+    <input class="bouton" type="submit" value="Rechercher" />
 </form>
 
 <?php
